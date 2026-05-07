@@ -1,6 +1,6 @@
 use crate::k256::{elliptic_curve::subtle::Choice, CompressedPoint, EncodedPoint, FieldBytes};
-
 use crate::secp256k1::field::{FieldElement, FieldElementConst};
+use crate::secp256k1::hooks::Secp256k1Hooks;
 
 use super::{jacobian::JacobianConst, AffineStorage, Jacobian};
 
@@ -132,7 +132,28 @@ impl Affine {
         self.infinity || (self.x.normalizes_to_zero() && self.y.normalizes_to_zero())
     }
 
-    pub(crate) fn decompress(x_bytes: &FieldBytes, y_is_odd: bool) -> Option<Self> {
+    pub fn decompress(x_bytes: &FieldBytes, y_is_odd: bool) -> Option<Self> {
+        Self::decompress_with_hooks(
+            x_bytes,
+            y_is_odd,
+            &mut crate::secp256k1::hooks::DefaultSecp256k1Hooks,
+        )
+    }
+
+    #[cfg(test)]
+    fn set_xo(&mut self, x: &FieldElement, y_is_odd: bool) -> bool {
+        self.set_xo_with_hooks(
+            x,
+            y_is_odd,
+            &mut crate::secp256k1::hooks::DefaultSecp256k1Hooks,
+        )
+    }
+
+    pub fn decompress_with_hooks<H: Secp256k1Hooks>(
+        x_bytes: &FieldBytes,
+        y_is_odd: bool,
+        hooks: &mut H,
+    ) -> Option<Self> {
         #[allow(deprecated)]
         let len = x_bytes.len();
         debug_assert!(len == 32);
@@ -141,7 +162,7 @@ impl Affine {
         x_bytes.as_slice().try_into().ok().and_then(|x| {
             let x = FieldElement::from_bytes(x)?;
             let mut ret = Affine::DEFAULT;
-            if ret.set_xo(&x, y_is_odd) {
+            if ret.set_xo_with_hooks(&x, y_is_odd, hooks) {
                 Some(ret)
             } else {
                 None
@@ -149,13 +170,18 @@ impl Affine {
         })
     }
 
-    fn set_xo(&mut self, x: &FieldElement, y_is_odd: bool) -> bool {
+    fn set_xo_with_hooks<H: Secp256k1Hooks>(
+        &mut self,
+        x: &FieldElement,
+        y_is_odd: bool,
+        hooks: &mut H,
+    ) -> bool {
         self.y = *x;
         self.y.square_in_place();
         self.y *= x;
         self.y += 7;
 
-        let ret = self.y.sqrt_in_place();
+        let ret = hooks.fe_sqrt_and_assign(&mut self.y);
         self.y.normalize_in_place();
 
         if self.y.is_odd() != y_is_odd {
@@ -168,7 +194,7 @@ impl Affine {
         ret
     }
 
-    pub(crate) fn normalize_in_place(&mut self) {
+    pub fn normalize_in_place(&mut self) {
         self.x.normalize_in_place();
         self.y.normalize_in_place();
     }
@@ -208,7 +234,7 @@ impl Affine {
         self.infinity = a.infinity;
     }
 
-    pub(crate) fn to_jacobian(self) -> Jacobian {
+    pub fn to_jacobian(self) -> Jacobian {
         if self.is_infinity() {
             return Jacobian::INFINITY;
         }

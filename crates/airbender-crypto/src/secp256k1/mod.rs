@@ -2,10 +2,11 @@
 #![allow(clippy::precedence)]
 
 mod context;
-mod field;
+pub mod field;
+pub mod hooks;
 mod points;
 mod recover;
-mod scalars;
+pub mod scalars;
 
 #[cfg(test)]
 mod test_vectors;
@@ -15,9 +16,10 @@ use core::fmt::Display;
 
 pub use context::ECMultContext;
 pub use recover::recover_with_context;
+pub use recover::recover_with_context_and_hooks;
 
 #[cfg(feature = "secp256k1-static-context")]
-pub use recover::recover;
+pub use recover::{recover, recover_with_hooks};
 
 #[derive(Debug, PartialEq)]
 pub enum Secp256k1Err {

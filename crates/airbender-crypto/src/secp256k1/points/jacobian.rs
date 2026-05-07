@@ -1,4 +1,5 @@
 use crate::secp256k1::field::{FieldElement, FieldElementConst};
+use crate::secp256k1::hooks::Secp256k1Hooks;
 
 use super::{affine::AffineConst, Affine, AffineStorage};
 
@@ -174,7 +175,7 @@ impl JacobianConst {
 }
 
 #[derive(Debug, Clone, Copy)]
-pub(crate) struct Jacobian {
+pub struct Jacobian {
     pub(crate) x: FieldElement,
     pub(crate) y: FieldElement,
     pub(crate) z: FieldElement,
@@ -206,7 +207,11 @@ impl Jacobian {
         self.z.normalizes_to_zero()
     }
 
-    pub(crate) fn to_affine(self) -> Affine {
+    pub fn to_affine(self) -> Affine {
+        self.to_affine_with_hooks(&mut crate::secp256k1::hooks::DefaultSecp256k1Hooks)
+    }
+
+    pub fn to_affine_with_hooks<H: Secp256k1Hooks>(self, hooks: &mut H) -> Affine {
         self.assert_verify();
 
         if self.is_infinity() {
@@ -214,7 +219,7 @@ impl Jacobian {
         }
 
         let mut zi = self.z;
-        zi.invert_in_place();
+        hooks.fe_invert_and_assign(&mut zi);
 
         let mut ret = Affine {
             x: zi,
