@@ -3,6 +3,7 @@
 
 extern crate alloc;
 
+use airbender_core::wire::FramedRead;
 use alloc::vec::Vec;
 use core::fmt;
 
@@ -46,6 +47,48 @@ impl AirbenderCodec for AirbenderCodecV0 {
             });
         }
         Ok(decoded)
+    }
+}
+
+/// Bridges a [`FramedRead`] source (owned by `airbender-core`, bincode-free) to
+/// [`bincode`]'s reader trait, so the framing layer stays decoupled from the
+/// serializer. Maps frame exhaustion to bincode's `UnexpectedEnd`.
+struct FramedBincodeReader<'a, R: FramedRead>(&'a mut R);
+
+impl<R: FramedRead> bincode::de::read::Reader for FramedBincodeReader<'_, R> {
+    fn read(&mut self, bytes: &mut [u8]) -> Result<(), bincode::error::DecodeError> {
+        self.0
+            .read(bytes)
+            .map_err(|end| bincode::error::DecodeError::UnexpectedEnd {
+                additional: end.shortfall,
+            })
+    }
+}
+
+impl AirbenderCodecV0 {
+    /// Decode a value from a streaming [`FramedRead`] source using the same
+    /// configuration as [`AirbenderCodec::decode`].
+    ///
+    /// Unlike the slice-based `decode`, the end-of-input check is left to the
+    /// caller: a reader knows the frame bounds, bincode does not. Callers that
+    /// need the codec's trailing-byte strictness should verify the reader is
+    /// fully consumed and raise [`CodecError::TrailingBytes`] themselves (see
+    /// `airbender_core::wire::FramedReader::remaining`).
+    ///
+    /// For `DeserializeOwned` types this consumes exactly the same bytes with
+    /// the same validation as `decode`. One failure-mode difference: a
+    /// `deserialize_bytes` visitor (e.g. `serde_bytes`) is served zero-copy by
+    /// the slice path but goes through `Vec<u8>::decode` here, which allocates
+    /// the claimed length up front — so a bogus inner length fails as an
+    /// allocation abort rather than a clean `DecodeError`. Ordinary `Vec<u8>`
+    /// and `String` fields are unaffected (both paths allocate up front).
+    pub fn decode_from_reader<T, R>(reader: &mut R) -> Result<T, CodecError>
+    where
+        T: serde::de::DeserializeOwned,
+        R: FramedRead,
+    {
+        bincode::serde::decode_from_reader(FramedBincodeReader(reader), bincode::config::standard())
+            .map_err(CodecError::Decode)
     }
 }
 
