@@ -1,8 +1,10 @@
-# Airbender Platform
+# ADI Stack Airbender Platform
 
-Airbender Platform is a Rust toolkit for writing RISC-V zk-provable programs.
+ADI Stack Airbender Platform is a Rust toolkit for writing RISC-V zk-provable programs.
 
 You write a **guest** program (the code you want to prove) and a **host** program (the native Rust code that feeds inputs, runs the guest, and generates/verifies proofs). The platform handles compilation, execution, proving, and verification.
+
+ADI Stack utilizing the [MatterLabs Airbender Platform stack](https://github.com/matter-labs/airbender-platform)
 
 ## What's Inside
 
@@ -26,8 +28,8 @@ You write a **guest** program (the code you want to prove) and a **host** progra
 
 ## Documentation
 
-Read the **[Airbender Platform Book](https://matter-labs.github.io/airbender-platform/latest)** for the full user guide.
-Browse the **[workspace API docs](https://matter-labs.github.io/airbender-platform/api/)** for the current `main` branch rustdocs.
+Read the **[Airbender Platform Book](https://github.com/ADI-Foundation-Labs/ADI-Stack-Airbender-Platform/latest)** for the full user guide.
+Browse the **[workspace API docs](https://github.com/ADI-Foundation-Labs/ADI-Stack-Airbender-Platform/api/)** for the current `main` branch rustdocs.
 
 The book source lives in [`docs/`](./docs/). To build locally:
 

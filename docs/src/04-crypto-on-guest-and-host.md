@@ -99,11 +99,11 @@ Hook implementations must produce correct results. The recovery functions trust 
 
 ### Example
 
-The [`examples/ecrecover-hooks/`](https://github.com/matter-labs/airbender-platform/tree/main/examples/ecrecover-hooks) example demonstrates the full hint-and-verify flow: the host precomputes hints with `CapturingHooks`, the guest verifies them cheaply with `PrecomputedHintHooks`.
+The [`examples/ecrecover-hooks/`](https://github.com/ADI-Foundation-Labs/ADI-Stack-Airbender-Platform/tree/main/examples/ecrecover-hooks) example demonstrates the full hint-and-verify flow: the host precomputes hints with `CapturingHooks`, the guest verifies them cheaply with `PrecomputedHintHooks`.
 
 ## Practical Tips
 
 - Write shared crypto code that runs on both host and guest. Test on the host first (faster iteration), then run guest execution/proof flows.
 - For secp usage examples, see the crate tests:
-  - [`tests/secp256k1.rs`](https://github.com/matter-labs/airbender-platform/blob/main/crates/airbender-crypto/tests/secp256k1.rs)
-  - [`tests/secp256r1.rs`](https://github.com/matter-labs/airbender-platform/blob/main/crates/airbender-crypto/tests/secp256r1.rs)
+  - [`tests/secp256k1.rs`](https://github.com/ADI-Foundation-Labs/ADI-Stack-Airbender-Platform/blob/main/crates/airbender-crypto/tests/secp256k1.rs)
+  - [`tests/secp256r1.rs`](https://github.com/ADI-Foundation-Labs/ADI-Stack-Airbender-Platform/blob/main/crates/airbender-crypto/tests/secp256r1.rs)

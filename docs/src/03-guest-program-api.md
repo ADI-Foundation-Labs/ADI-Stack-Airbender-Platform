@@ -148,8 +148,8 @@ For manual boundaries, call `cycle_marker()` directly.
 
 ## Examples
 
-- [`examples/fibonacci/guest`](https://github.com/matter-labs/airbender-platform/tree/main/examples/fibonacci/guest) - basic no_std computation
-- [`examples/u256-add/guest`](https://github.com/matter-labs/airbender-platform/tree/main/examples/u256-add/guest) - no_std with external crates
-- [`examples/std-btreemap/guest`](https://github.com/matter-labs/airbender-platform/tree/main/examples/std-btreemap/guest) - std-enabled guest
-- [`examples/cycle-markers/guest`](https://github.com/matter-labs/airbender-platform/tree/main/examples/cycle-markers/guest) - profiling with delegation
-- [`examples/revm-basic/guest`](https://github.com/matter-labs/airbender-platform/tree/main/examples/revm-basic/guest) - revm transaction inside Airbender
+- [`examples/fibonacci/guest`](https://github.com/ADI-Foundation-Labs/ADI-Stack-Airbender-Platform/tree/main/examples/fibonacci/guest) - basic no_std computation
+- [`examples/u256-add/guest`](https://github.com/ADI-Foundation-Labs/ADI-Stack-Airbender-Platform/tree/main/examples/u256-add/guest) - no_std with external crates
+- [`examples/std-btreemap/guest`](https://github.com/ADI-Foundation-Labs/ADI-Stack-Airbender-Platform/tree/main/examples/std-btreemap/guest) - std-enabled guest
+- [`examples/cycle-markers/guest`](https://github.com/ADI-Foundation-Labs/ADI-Stack-Airbender-Platform/tree/main/examples/cycle-markers/guest) - profiling with delegation
+- [`examples/revm-basic/guest`](https://github.com/ADI-Foundation-Labs/ADI-Stack-Airbender-Platform/tree/main/examples/revm-basic/guest) - revm transaction inside Airbender

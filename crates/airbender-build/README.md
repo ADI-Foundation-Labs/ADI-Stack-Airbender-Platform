@@ -1,4 +1,4 @@
-# airbender-build [![Build status](https://github.com/matter-labs/airbender-platform/actions/workflows/ci.yml/badge.svg)](https://github.com/matter-labs/airbender-platform/actions/workflows/ci.yml) [![License: MIT OR Apache-2.0](https://img.shields.io/badge/License-MIT%2FApache--2.0-blue.svg)](https://github.com/matter-labs/airbender-platform#license) ![rust nightly required](https://img.shields.io/badge/rust-nightly-blue.svg?label=Required%20Rust) ![host tooling](https://img.shields.io/badge/runtime-host%20tooling-green.svg)
+# airbender-build [![Build status](https://github.com/ADI-Foundation-Labs/ADI-Stack-Airbender-Platform/actions/workflows/ci.yml/badge.svg)](https://github.com/ADI-Foundation-Labs/ADI-Stack-Airbender-Platform/actions/workflows/ci.yml) [![License: MIT OR Apache-2.0](https://img.shields.io/badge/License-MIT%2FApache--2.0-blue.svg)](https://github.com/ADI-Foundation-Labs/ADI-Stack-Airbender-Platform#license) ![rust nightly required](https://img.shields.io/badge/rust-nightly-blue.svg?label=Required%20Rust) ![host tooling](https://img.shields.io/badge/runtime-host%20tooling-green.svg)
 
 **Documentation:** [API docs](https://matter-labs.github.io/airbender-platform/api/airbender_build/) | [CLI build reference](https://matter-labs.github.io/airbender-platform/latest/05-cli-reference.html)
 
@@ -22,11 +22,11 @@ Reproducible builds run inside a pinned Docker container and record provenance m
 
 ```toml
 [dependencies]
-airbender-build = { git = "https://github.com/matter-labs/airbender-platform", branch = "main" }
+airbender-build = { git = "https://github.com/ADI-Foundation-Labs/ADI-Stack-Airbender-Platform", branch = "main" }
 ```
 
 Use `cargo-airbender` for normal CLI workflows. Reach for this crate when you need the same packaging behavior inside a custom build pipeline or host-side tool.
 
 ## License
 
-Licensed under either [Apache License, Version 2.0](https://github.com/matter-labs/airbender-platform/blob/main/LICENSE-APACHE) or [MIT license](https://github.com/matter-labs/airbender-platform/blob/main/LICENSE-MIT) at your option.
+Licensed under either [Apache License, Version 2.0](https://github.com/ADI-Foundation-Labs/ADI-Stack-Airbender-Platform/blob/main/LICENSE-APACHE) or [MIT license](https://github.com/ADI-Foundation-Labs/ADI-Stack-Airbender-Platform/blob/main/LICENSE-MIT) at your option.
