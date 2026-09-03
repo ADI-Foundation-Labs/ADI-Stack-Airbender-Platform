@@ -1,4 +1,4 @@
-# cargo-airbender [![Build status](https://github.com/matter-labs/airbender-platform/actions/workflows/ci.yml/badge.svg)](https://github.com/matter-labs/airbender-platform/actions/workflows/ci.yml) [![License: MIT OR Apache-2.0](https://img.shields.io/badge/License-MIT%2FApache--2.0-blue.svg)](https://github.com/matter-labs/airbender-platform#license) ![rust nightly required](https://img.shields.io/badge/rust-nightly-blue.svg?label=Required%20Rust) ![cargo subcommand](https://img.shields.io/badge/cargo-subcommand-orange.svg)
+# cargo-airbender [![Build status](https://github.com/ADI-Foundation-Labs/ADI-Stack-Airbender-Platform/actions/workflows/ci.yml/badge.svg)](https://github.com/ADI-Foundation-Labs/ADI-Stack-Airbender-Platform/actions/workflows/ci.yml) [![License: MIT OR Apache-2.0](https://img.shields.io/badge/License-MIT%2FApache--2.0-blue.svg)](https://github.com/ADI-Foundation-Labs/ADI-Stack-Airbender-Platform#license) ![rust nightly required](https://img.shields.io/badge/rust-nightly-blue.svg?label=Required%20Rust) ![cargo subcommand](https://img.shields.io/badge/cargo-subcommand-orange.svg)
 
 **Documentation:** [API docs](https://matter-labs.github.io/airbender-platform/api/cargo_airbender/) | [CLI reference](https://matter-labs.github.io/airbender-platform/latest/05-cli-reference.html)
 
@@ -26,17 +26,17 @@ cargo install --path crates/cargo-airbender --force
 From GitHub:
 
 ```sh
-cargo install --git https://github.com/matter-labs/airbender-platform --branch main cargo-airbender --force
+cargo install --git https://github.com/ADI-Foundation-Labs/ADI-Stack-Airbender-Platform --branch main cargo-airbender --force
 ```
 
 By default GPU support is enabled. Install with `--no-default-features` if you want a CLI binary without GPU proving support.
 
 ## Requirements
 
-- Rust nightly pinned by [`rust-toolchain.toml`](https://github.com/matter-labs/airbender-platform/blob/main/rust-toolchain.toml).
+- Rust nightly pinned by [`rust-toolchain.toml`](https://github.com/ADI-Foundation-Labs/ADI-Stack-Airbender-Platform/blob/main/rust-toolchain.toml).
 - `cargo-binutils` for guest build flows that invoke `cargo objcopy`.
 - Docker only when using reproducible builds.
 
 ## License
 
-Licensed under either [Apache License, Version 2.0](https://github.com/matter-labs/airbender-platform/blob/main/LICENSE-APACHE) or [MIT license](https://github.com/matter-labs/airbender-platform/blob/main/LICENSE-MIT) at your option.
+Licensed under either [Apache License, Version 2.0](https://github.com/ADI-Foundation-Labs/ADI-Stack-Airbender-Platform/blob/main/LICENSE-APACHE) or [MIT license](https://github.com/ADI-Foundation-Labs/ADI-Stack-Airbender-Platform/blob/main/LICENSE-MIT) at your option.

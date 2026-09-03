@@ -1,13 +1,13 @@
 [book]
-authors = ["Matter Labs"]
+authors = ["ADI Foundation"]
 language = "en"
 src = "src"
 title = "Airbender Platform"
 
 [output.html]
 smart-punctuation = true
-git-repository-url = "https://github.com/matter-labs/airbender-platform/tree/main/docs"
-edit-url-template = "https://github.com/matter-labs/airbender-platform/edit/main/docs/{path}"
+git-repository-url = "https://github.com/ADI-Foundation-Labs/ADI-Stack-Airbender-Platform/tree/main/docs"
+edit-url-template = "https://github.com/ADI-Foundation-Labs/ADI-Stack-Airbender-Platform/edit/main/docs/{path}"
 additional-js = ["js/version-box.js"]
 additional-css = ["css/version-box.css"]
 

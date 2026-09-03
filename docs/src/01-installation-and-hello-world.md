@@ -4,7 +4,7 @@ Before diving into the APIs, let's make sure everything works. We'll install the
 
 ## Prerequisites
 
-- Rust nightly toolchain from [`rust-toolchain.toml`](https://github.com/matter-labs/airbender-platform/blob/main/rust-toolchain.toml)
+- Rust nightly toolchain from [`rust-toolchain.toml`](https://github.com/ADI-Foundation-Labs/ADI-Stack-Airbender-System/blob/main/rust-toolchain.toml)
 - `clang` available in `PATH`
 - `cargo-binutils` for `cargo objcopy`
 - Docker (only needed for `cargo airbender build --reproducible`)
@@ -26,7 +26,7 @@ cargo install --path crates/cargo-airbender --force
 Or directly from the repository:
 
 ```sh
-cargo install --git https://github.com/matter-labs/airbender-platform --branch main cargo-airbender --force
+cargo install --git https://github.com/ADI-Foundation-Labs/ADI-Stack-Airbender-Platform --branch main cargo-airbender --force
 ```
 
 GPU support is enabled by default, so `prove --backend gpu` and `generate-vk` work out of the box. To install without GPU support:
@@ -148,4 +148,4 @@ No specialized hardware is needed for development. The proving backends have dif
 
 - Read the [Guest Program API](./03-guest-program-api.md) to learn how to write real guest programs.
 - Read the [Host Program API](./02-host-program-api.md) to learn how to feed inputs and verify proofs.
-- Browse the [examples](https://github.com/matter-labs/airbender-platform/tree/main/examples) for complete working projects.
+- Browse the [examples](https://github.com/ADI-Foundation-Labs/ADI-Stack-Airbender-Platform/tree/main/examples) for complete working projects.

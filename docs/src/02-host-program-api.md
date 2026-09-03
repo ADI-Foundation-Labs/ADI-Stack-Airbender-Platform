@@ -142,8 +142,8 @@ For non-JIT transpiler runs, `ExecutionResult::cycle_markers` contains the captu
 
 See full host-side usage in:
 
-- [`examples/fibonacci/host`](https://github.com/matter-labs/airbender-platform/tree/main/examples/fibonacci/host)
-- [`examples/u256-add/host`](https://github.com/matter-labs/airbender-platform/tree/main/examples/u256-add/host)
-- [`examples/std-btreemap/host`](https://github.com/matter-labs/airbender-platform/tree/main/examples/std-btreemap/host)
-- [`examples/cycle-markers/host`](https://github.com/matter-labs/airbender-platform/tree/main/examples/cycle-markers/host)
-- [`examples/revm-basic/host`](https://github.com/matter-labs/airbender-platform/tree/main/examples/revm-basic/host)
+- [`examples/fibonacci/host`](https://github.com/ADI-Foundation-Labs/ADI-Stack-Airbender-Platform/tree/main/examples/fibonacci/host)
+- [`examples/u256-add/host`](https://github.com/ADI-Foundation-Labs/ADI-Stack-Airbender-Platform/tree/main/examples/u256-add/host)
+- [`examples/std-btreemap/host`](https://github.com/ADI-Foundation-Labs/ADI-Stack-Airbender-Platform/tree/main/examples/std-btreemap/host)
+- [`examples/cycle-markers/host`](https://github.com/ADI-Foundation-Labs/ADI-Stack-Airbender-Platform/tree/main/examples/cycle-markers/host)
+- [`examples/revm-basic/host`](https://github.com/ADI-Foundation-Labs/ADI-Stack-Airbender-Platform/tree/main/examples/revm-basic/host)

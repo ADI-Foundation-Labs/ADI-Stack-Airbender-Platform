@@ -1,4 +1,4 @@
-# airbender-crypto [![Build status](https://github.com/matter-labs/airbender-platform/actions/workflows/ci.yml/badge.svg)](https://github.com/matter-labs/airbender-platform/actions/workflows/ci.yml) [![License: MIT OR Apache-2.0](https://img.shields.io/badge/License-MIT%2FApache--2.0-blue.svg)](https://github.com/matter-labs/airbender-platform#license) ![rust nightly required](https://img.shields.io/badge/rust-nightly-blue.svg?label=Required%20Rust) ![host and guest](https://img.shields.io/badge/runtime-host%20%2B%20guest-green.svg)
+# airbender-crypto [![Build status](https://github.com/ADI-Foundation-Labs/ADI-Stack-Airbender-Platform/actions/workflows/ci.yml/badge.svg)](https://github.com/ADI-Foundation-Labs/ADI-Stack-Airbender-Platform/actions/workflows/ci.yml) [![License: MIT OR Apache-2.0](https://img.shields.io/badge/License-MIT%2FApache--2.0-blue.svg)](https://github.com/ADI-Foundation-Labs/ADI-Stack-Airbender-Platform#license) ![rust nightly required](https://img.shields.io/badge/rust-nightly-blue.svg?label=Required%20Rust) ![host and guest](https://img.shields.io/badge/runtime-host%20%2B%20guest-green.svg)
 
 **Documentation:** [API docs](https://matter-labs.github.io/airbender-platform/api/airbender_crypto/) | [Crypto guide](https://matter-labs.github.io/airbender-platform/latest/04-crypto-on-guest-and-host.html)
 
@@ -25,11 +25,11 @@
 
 ```toml
 [dependencies]
-airbender-crypto = { git = "https://github.com/matter-labs/airbender-platform", branch = "main" }
+airbender-crypto = { git = "https://github.com/ADI-Foundation-Labs/ADI-Stack-Airbender-Platform", branch = "main" }
 ```
 
 Use `features = ["proving"]` for guest builds, or enable the `crypto` feature on `airbender-sdk` if you want the same API through the SDK re-export.
 
 ## License
 
-Licensed under either [Apache License, Version 2.0](https://github.com/matter-labs/airbender-platform/blob/main/LICENSE-APACHE) or [MIT license](https://github.com/matter-labs/airbender-platform/blob/main/LICENSE-MIT) at your option.
+Licensed under either [Apache License, Version 2.0](https://github.com/ADI-Foundation-Labs/ADI-Stack-Airbender-Platform/blob/main/LICENSE-APACHE) or [MIT license](https://github.com/ADI-Foundation-Labs/ADI-Stack-Airbender-Platform/blob/main/LICENSE-MIT) at your option.

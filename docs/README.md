@@ -1,6 +1,6 @@
 # Airbender Platform User Guide
 
-This directory contains the source for the [Airbender Platform book](https://matter-labs.github.io/airbender-platform/).
+This directory contains the source for the [Airbender Platform book](https://github.com/ADI-Foundation-Labs/ADI-Stack-Airbender-Platform).
 
 ## Building locally
 

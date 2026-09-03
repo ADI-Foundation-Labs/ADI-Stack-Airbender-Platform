@@ -101,7 +101,7 @@ mod tests {
                 .expect("resolve default SDK dependency");
         assert_eq!(
             dependency,
-            "git = \"https://github.com/matter-labs/airbender-platform\", branch = \"main\""
+            "git = \"https://github.com/ADI-Foundation-Labs/ADI-Stack-Airbender-Platform\", branch = \"main\""
         );
     }
 
