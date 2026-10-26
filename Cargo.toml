@@ -31,9 +31,9 @@ resolver = "2"
 [workspace.package]
 version = "0.2.4"
 edition = "2021"
-authors = ["The Matter Labs Team <hello@matterlabs.dev>"]
-homepage = "https://zksync.io/"
-repository = "https://github.com/matter-labs/airbender-platform/"
+authors = ["ADI Foundation"]
+homepage = "https://adi.foundation"
+repository = "https://github.com/ADI-Foundation-Labs/ADI-Stack-Airbender-Platform/"
 license = "MIT OR Apache-2.0"
 keywords = ["blockchain", "zksync", "zk", "risc-v"]
 categories = ["cryptography"]
@@ -100,13 +100,13 @@ rand_chacha = { version = "0.3", default-features = false }
 # `v0.6.5-private` is `v0.6.4-private` plus the configurable JIT RAM size. It touches
 # only `riscv_transpiler` and `gpu_prover`, so no verifier binary, program commitment
 # or VK moves with it.
-common_constants = { git = "https://github.com/matter-labs/zksync-airbender-private.git", tag = "v0.6.5-private", default-features = false }
-blake2s_u32 = { git = "https://github.com/matter-labs/zksync-airbender-private.git", tag = "v0.6.5-private", default-features = false }
-riscv_common = { git = "https://github.com/matter-labs/zksync-airbender-private.git", tag = "v0.6.5-private" }
-execution_utils = { git = "https://github.com/matter-labs/zksync-airbender-private.git", tag = "v0.6.5-private" }
-gpu_prover = { git = "https://github.com/matter-labs/zksync-airbender-private.git", tag = "v0.6.5-private" }
-riscv_transpiler = { git = "https://github.com/matter-labs/zksync-airbender-private.git", tag = "v0.6.5-private" }
-verifier_common = { git = "https://github.com/matter-labs/zksync-airbender-private.git", tag = "v0.6.5-private" }
+common_constants = { git = "https://github.com/ADI-Foundation-Labs/ADI-Stack-Airbender-System-private", tag = "v0.6.5-private-b", default-features = false }
+blake2s_u32 = { git = "https://github.com/ADI-Foundation-Labs/ADI-Stack-Airbender-System-private", tag = "v0.6.5-private-b", default-features = false }
+riscv_common = { git = "https://github.com/ADI-Foundation-Labs/ADI-Stack-Airbender-System-private", tag = "v0.6.5-private-b" }
+execution_utils = { git = "https://github.com/ADI-Foundation-Labs/ADI-Stack-Airbender-System-private", tag = "v0.6.5-private-b" }
+gpu_prover = { git = "https://github.com/ADI-Foundation-Labs/ADI-Stack-Airbender-System-private", tag = "v0.6.5-private-b" }
+riscv_transpiler = { git = "https://github.com/ADI-Foundation-Labs/ADI-Stack-Airbender-System-private", tag = "v0.6.5-private-b" }
+verifier_common = { git = "https://github.com/ADI-Foundation-Labs/ADI-Stack-Airbender-System-private", tag = "v0.6.5-private-b" }
 
 # These packages can require too much stack space to compile,
 # which can be increased with `RUST_MIN_STACK=16777216` environment variable.

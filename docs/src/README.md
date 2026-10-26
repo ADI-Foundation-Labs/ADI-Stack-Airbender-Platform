@@ -3,7 +3,7 @@
 Airbender lets you write Rust programs whose execution can be proven with zero-knowledge. Your code compiles to RISC-V, runs inside a virtual machine, and produces a cryptographic proof that the execution was correct, without revealing the inputs.
 
 API reference docs for the current `main` branch are published at
-[`/api/`](https://matter-labs.github.io/airbender-platform/api/).
+[`/api/`](https://github.com/ADI-Foundation-Labs/ADI-Stack-Airbender-Platform/api/).
 
 The programming model has two sides:
 
@@ -20,10 +20,10 @@ The programming model has two sides:
 
 ## Examples
 
-Complete guest + host examples live in the repository under [`examples/`](https://github.com/matter-labs/airbender-platform/tree/main/examples):
+Complete guest + host examples live in the repository under [`examples/`](https://github.com/ADI-Foundation-Labs/ADI-Stack-Airbender-Platform/tree/main/examples):
 
-- [`fibonacci`](https://github.com/matter-labs/airbender-platform/tree/main/examples/fibonacci) - basic no_std computation
-- [`u256-add`](https://github.com/matter-labs/airbender-platform/tree/main/examples/u256-add) - no_std with `ruint` for big integers
-- [`std-btreemap`](https://github.com/matter-labs/airbender-platform/tree/main/examples/std-btreemap) - std-enabled guest with `BTreeMap`
-- [`cycle-markers`](https://github.com/matter-labs/airbender-platform/tree/main/examples/cycle-markers) - transpiler profiling with delegation snapshots
-- [`revm-basic`](https://github.com/matter-labs/airbender-platform/tree/main/examples/revm-basic) - revm transaction inside Airbender
+- [`fibonacci`](https://github.com/ADI-Foundation-Labs/ADI-Stack-Airbender-Platform/tree/main/examples/fibonacci) - basic no_std computation
+- [`u256-add`](https://github.com/ADI-Foundation-Labs/ADI-Stack-Airbender-Platform/tree/main/examples/u256-add) - no_std with `ruint` for big integers
+- [`std-btreemap`](https://github.com/ADI-Foundation-Labs/ADI-Stack-Airbender-Platform/tree/main/examples/std-btreemap) - std-enabled guest with `BTreeMap`
+- [`cycle-markers`](https://github.com/ADI-Foundation-Labs/ADI-Stack-Airbender-Platform/tree/main/examples/cycle-markers) - transpiler profiling with delegation snapshots
+- [`revm-basic`](https://github.com/ADI-Foundation-Labs/ADI-Stack-Airbender-Platform/tree/main/examples/revm-basic) - revm transaction inside Airbender

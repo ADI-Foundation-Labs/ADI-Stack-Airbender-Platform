@@ -6,7 +6,6 @@ Hello! Thanks for your interest in Airbender Platform.
 
 1. Open issues: if you find a bug, have something you believe needs to be fixed, or have an idea for a feature, please open an issue.
 2. Add context to existing issues: provide screenshots, logs, code snippets, and whatever else might help resolve issues.
-3. Report security issues: see [our security policy](./SECURITY.md).
 
 ## Pull request policy
 
